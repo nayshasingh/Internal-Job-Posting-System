@@ -1,0 +1,9 @@
+<nav>
+    <a routerLink="/">Home</a>
+    <a routerLink="/jobs">Jobs</a>
+    <a *ngIf="!isLoggedIn()" routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">Login</a>
+    <a *ngIf="!isLoggedIn()" routerLink="/register" routerLinkActive="active" ariaCurrentWhenActive="page">Register</a>
+    <a *ngIf="isLoggedIn() && isHR()" routerLink="/post-job" routerLinkActive="active" ariaCurrentWhenActive="page">Post Job</a>
+    <a *ngIf="isLoggedIn() && isHR()" routerLink="/candidates" routerLinkActive="active" ariaCurrentWhenActive="page">Candidates</a>
+    <a *ngIf="isLoggedIn()" (click)="logout()" routerLinkActive="active" ariaCurrentWhenActive="page">Logout</a>
+</nav>
